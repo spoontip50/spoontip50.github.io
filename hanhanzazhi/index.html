@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩寒杂志官方阅读平台，汇集《独唱团》、《ONE·一个》、《Manga杂志》等经典内容。提供深度文学、独家漫画、人文纪实与时尚生活方式，记录时代精神，探索多元世界。">
+    <meta name="keywords" content="韩寒杂志, 独唱团, 一个, ONE·一个, Manga杂志, 文学杂志, 漫画杂志, 时尚生活方式">
+    <title>韩寒杂志-经典文学与潮流漫画的深度阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-actions .btn-subscribe {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .header-actions .btn-subscribe:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Magazine Grid */
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .mag-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mag-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .mag-cover {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mag-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mag-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .mag-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mag-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .mag-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .mag-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .mag-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .mag-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Feature Section */
+        .features {
+            background-color: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Latest Articles */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .article-item {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .article-item:hover {
+            transform: translateX(5px);
+        }
+
+        .article-thumb {
+            width: 200px;
+            background-color: #eee;
+            flex-shrink: 0;
+        }
+
+        .article-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .article-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-footer {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            margin: 4rem auto;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 0.8rem 1rem;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-item {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>韩</span>寒杂志
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">全部杂志</a></li>
+                    <li><a href="#">文学专栏</a></li>
+                    <li><a href="#">独家漫画</a></li>
+                    <li><a href="#">专栏作者</a></li>
+                    <li><a href="#">订阅服务</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-subscribe">立即订阅</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>记录时代精神<br>探索多元世界</h1>
+                <p>从《独唱团》的宏大叙事到《Manga杂志》的视觉冲击，韩寒杂志始终致力于提供高品质的阅读体验，连接不同圈层的读者。</p>
+                <div class="hero-tags">
+                    <span class="tag">深度文学</span>
+                    <span class="tag">独家漫画</span>
+                    <span class="tag">人文纪实</span>
+                    <span class="tag">生活方式</span>
+                </div>
+                <a href="#magazines" class="btn-hero">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- Magazine Showcase -->
+        <section id="magazines" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">经典杂志</h2>
+                        <p class="section-subtitle">回顾那些影响了一代人的经典内容</p>
+                    </div>
+                </div>
+
+                <div class="magazine-grid">
+                    <!-- Magazine 1 -->
+                    <article class="mag-card">
+                        <div class="mag-cover">
+                            <span class="mag-badge">已完结</span>
+                            <img src="https://picsum.photos/seed/duchangtuan/400/300" alt="独唱团封面">
+                        </div>
+                        <div class="mag-info">
+                            <h3 class="mag-title">独唱团</h3>
+                            <p class="mag-desc">韩寒主编的首本杂志，集结了当时最犀利的作家与思想家，以独特的视角记录时代变迁。</p>
+                            <div class="mag-meta">
+                                <span>2010年首发</span>
+                                <a href="#" class="mag-link">阅读回顾 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Magazine 2 -->
+                    <article class="mag-card">
+                        <div class="mag-cover">
+                            <span class="mag-badge">热门</span>
+                            <img src="https://picsum.photos/seed/oneone/400/300" alt="ONE·一个封面">
+                        </div>
+                        <div class="mag-info">
+                            <h3 class="mag-title">ONE·一个</h3>
+                            <p class="mag-desc">每天一张精美图片，一段文字，一个故事。在碎片化时代，提供纯粹的阅读享受。</p>
+                            <div class="mag-meta">
+                                <span>每日更新</span>
+                                <a href="#" class="mag-link">查看今日内容 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Magazine 3 -->
+                    <article class="mag-card">
+                        <div class="mag-cover">
+                            <span class="mag-badge">视觉系</span>
+                            <img src="https://picsum.photos/seed/manga/400/300" alt="Manga杂志封面">
+                        </div>
+                        <div class="mag-info">
+                            <h3 class="mag-title">Manga杂志</h3>
+                            <p class="mag-desc">韩寒与中信联合推出的漫画杂志，汇聚国内外优秀漫画家，展现独特的视觉叙事艺术。</p>
+                            <div class="mag-meta">
+                                <span>月刊发行</span>
+                                <a href="#" class="mag-link">浏览漫画 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">阅读价值</h2>
+                        <p class="section-subtitle">为什么选择韩寒杂志？</p>
+                    </div>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">✒️</span>
+                        <h3>深度好文</h3>
+                        <p>拒绝快餐文化，每一篇文章都经过精心打磨，探讨社会、人性与生活的本质。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <h3>视觉盛宴</h3>
+                        <p>与顶尖插画师和漫画家合作，提供顶级印刷质感的视觉体验，不仅是阅读更是艺术欣赏。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌍</span>
+                        <h3>多元视角</h3>
+                        <p>打破刻板印象，收录来自不同领域、不同背景的声音，构建包容的公共讨论空间。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Articles -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">最新专栏</h2>
+                        <p class="section-subtitle">来自专栏作者的最新思考</p>
+                    </div>
+                </div>
+                
+                <div class="article-list">
+                    <article class="article-item">
+                        <div class="article-thumb">
+                            <img src="https://picsum.photos/seed/essay1/300/200" alt="文章配图">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-tag">随笔</span>
+                            <h3 class="article-title">关于孤独与自由的边界：重读《在路上》</h3>
+                            <p class="article-excerpt">在快节奏的现代生活中，我们是否还能保持那份纯粹的孤独感？本文探讨了个体在群体中的自我定位与精神自由。</p>
+                            <div class="article-footer">
+                                <span>作者：林语堂（纪念）</span>
+                                <span>2023-10-24</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-thumb">
+                            <img src="https://picsum.photos/seed/essay2/300/200" alt="文章配图">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-tag">时事评论</span>
+                            <h3 class="article-title">城市更新中的记忆留存：一种温和的抵抗</h3>
+                            <p class="article-excerpt">当摩天大楼拔地而起，我们该如何安放城市的记忆？本文通过实地走访，记录了城市变迁中那些被遗忘的角落。</p>
+                            <div class="article-footer">
+                                <span>作者：韩寒</span>
+                                <span>2023-10-22</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-thumb">
+                            <img src="https://picsum.photos/seed/essay3/300/200" alt="文章配图">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-tag">漫画推荐</span>
+                            <h3 class="article-title">《海贼王》之外的另一种冒险：漫画艺术的边界拓展</h3>
+                            <p class="article-excerpt">不仅仅是热血与友情，优秀的漫画作品同样能够承载深刻的社会议题。本期推荐几部打破次元壁的现实主义佳作。</p>
+                            <div class="article-footer">
+                                <span>作者：编辑部</span>
+                                <span>2023-10-20</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="container">
+            <div class="newsletter">
+                <h2>订阅杂志周刊</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">不错过任何一篇深度好文，第一时间获取新刊资讯。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢订阅！我们将定期向您发送精彩内容。');">
+                    <input type="email" class="newsletter-input" placeholder="请输入您的电子邮箱" required>
+                    <button type="submit" class="newsletter-btn">立即订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span>韩</span>寒杂志</h3>
+                    <p>致力于提供高品质的阅读内容，连接不同圈层的读者，探索多元的世界。</p>
+                    <div style="font-size: 1.2rem;">
+                        <!-- Social Icons Placeholder -->
+                        <span style="margin-right: 10px;">Twitter</span>
+                        <span style="margin-right: 10px;">Weibo</span>
+                        <span>Douyin</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">杂志简介</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>阅读指南</h4>
+                    <ul>
+                        <li><a href="#">电子版订阅</a></li>
+                        <li><a href="#">实体刊购买</a></li>
+                        <li><a href="#">阅读帮助</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">ONE·一个</a></li>
+                        <li><a href="#">ONE APP</a></li>
+                        <li><a href="#">韩寒工作室</a></li>
+                        <li><a href="#">平路出版</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 韩寒杂志版权所有. 保留所有权利。</p>
+                <p>沪ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
