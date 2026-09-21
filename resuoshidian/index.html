@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="热缩式电缆头专业指南：涵盖热缩电缆头制作工艺、施工步骤、安装规范、常见故障排查及选型建议，提供实用的电力工程电缆连接技术资料。">
+    <meta name="keywords" content="热缩式电缆头, 电缆接头制作, 电力施工技术, 电缆终端头, 电缆中间接头, 热缩材料">
+    <title>热缩式电缆头-电力工程电缆连接与施工工艺技术指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #e6f0fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --bg-body: #f8f9fa;
+            --bg-white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --radius: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--text-main);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 3rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 3rem 0;
+            background-color: var(--bg-body);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 2.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .step-item::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .step-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 4rem 0;
+            background-color: var(--bg-body);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--accent-color);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-item.active .faq-question::before {
+            content: "+";
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #d1d1d1;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                电工技术指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#intro" class="active">简介</a></li>
+                    <li><a href="#process">施工工艺</a></li>
+                    <li><a href="#comparison">选型对比</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>热缩式电缆头</h1>
+            <p>专业电力施工工艺指南：掌握热缩电缆头制作的核心步骤、安装规范与故障排查技巧，确保电力传输安全可靠。</p>
+            <a href="#process" class="cta-button">查看施工工艺</a>
+        </div>
+    </section>
+
+    <section id="intro" class="intro">
+        <div class="container intro-content">
+            <div class="intro-text">
+                <span class="badge">电力工程</span>
+                <h2>什么是热缩式电缆头？</h2>
+                <p>热缩式电缆头是电力系统中用于电缆终端与电缆本体连接的关键部件，通过热收缩材料在加热后紧包电缆，实现密封、绝缘和机械保护。它广泛应用于高压及中低压电力电缆的连接处。</p>
+                <p>与传统环氧树脂电缆头相比，热缩式电缆头具有施工方便、现场适应性强、成本低廉等特点。它主要由热缩管、应力控制管、雨裙等组件构成，利用热缩材料的弹性回缩力，使绝缘层紧密贴合电缆绝缘层，形成可靠的电气连接。</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://picsum.photos/seed/cable1/600/400.jpg" alt="热缩式电缆头施工现场" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">核心优势</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>优异的绝缘性能</h3>
+                    <p>采用高弹性、高密度的交联聚乙烯材料，在收缩后能形成均匀的绝缘层，有效防止击穿和泄漏电流。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>应力控制设计</h3>
+                    <p>配备应力控制管，能均匀分布电场应力，消除绝缘表面的电场集中点，提高运行安全性。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🛠️</span>
+                    <h3>施工工艺简便</h3>
+                    <p>无需复杂的模具和固化时间，通过加热即可完成安装，特别适合野外和临时抢修作业。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🌧️</span>
+                    <h3>防水防潮结构</h3>
+                    <p>设计有独特的防水密封结构，防止水份侵入电缆内部，适应各种恶劣环境气候。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">热缩式电缆头制作工艺流程</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">标准的制作工艺是保证电缆头质量的关键，必须严格按照操作规程进行。</p>
+            
+            <div class="process-steps">
+                <div class="step-item" data-step="1">
+                    <h3>1. 准备与清洁</h3>
+                    <p>核对电缆规格型号，剥除电缆外护套、铠装层及内护套。使用清洁剂对电缆绝缘层进行清洁，确保无油污和灰尘，必要时进行干燥处理。</p>
+                </div>
+                <div class="step-item" data-step="2">
+                    <h3>2. 端部处理</h3>
+                    <p>根据设计要求剥除电缆端部屏蔽层和半导电层。切割时不可损伤主绝缘，端部应平整光滑，呈45度斜角，以减少电场集中。</p>
+                </div>
+                <div class="step-item" data-step="3">
+                    <h3>3. 套装热缩管</h3>
+                    <p>在电缆端部依次套入应力控制管、密封胶带和主绝缘热缩管。将密封胶带包绕在电缆端部切口处，防止水分侵入。</p>
+                </div>
+                <div class="step-item" data-step="4">
+                    <h3>4. 加热收缩</h3>
+                    <p>使用喷枪均匀加热热缩管，火焰应垂直于管体缓慢移动，确保从管子一端向另一端收缩，直至表面平整无皱褶。</p>
+                </div>
+                <div class="step-item" data-step="5">
+                    <h3>5. 安装接线端子</h3>
+                    <p>压接接线端子，去除压坑毛刺。用半导电带填充端子与绝缘层之间的空隙，并搭接主绝缘层约10-20mm，形成平滑的过渡。</p>
+                </div>
+                <div class="step-item" data-step="6">
+                    <h3>6. 终端防水与防护</h3>
+                    <p>安装雨裙，涂抹绝缘漆或密封胶，确保户外终端具有良好的防水和防污闪能力。安装接地线并固定牢固。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2 class="section-title">热缩式 vs 预制式电缆头</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>对比项目</th>
+                            <th>热缩式电缆头</th>
+                            <th>预制式电缆头</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>施工难度</strong></td>
+                            <td>较高，需现场制作，对工人技能要求严格。</td>
+                            <td>较低，现场安装简单，像搭积木一样。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>施工时间</strong></td>
+                            <td>较长，需加热收缩，受环境温度影响。</td>
+                            <td>短，几分钟即可完成安装。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>适用场景</strong></td>
+                            <td>中低压电缆，负荷变化不大，维护周期较长。</td>
+                            <td>高压电缆，对可靠性要求极高，或新建项目。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>成本</strong></td>
+                            <td>材料成本低，但人工成本高。</td>
+                            <td>材料成本较高，但人工成本低。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>故障率</strong></td>
+                            <td>随时间推移可能因老化出现微气隙。</td>
+                            <td>整体性能稳定，故障率相对较低。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">热缩式电缆头安装时需要注意哪些环境因素？</div>
+                <div class="faq-answer">
+                    安装时严禁在雨雪天或湿度大于75%的环境下进行。施工现场应保持清洁，防止灰尘和杂质混入绝缘层。加热时应注意防火，避免火焰直接烧灼电缆绝缘。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何判断热缩管是否收缩到位？</div>
+                <div class="faq-answer">
+                    收缩到位的标准是表面平整光滑，无皱褶，热缩管上的图案或标记线应清晰可见且位于管体中间位置，同时热缩管应紧贴电缆绝缘层，无松动。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">电缆头制作完成后如何进行试验？</div>
+                <div class="faq-answer">
+                    制作完成后应进行直流耐压试验和泄漏电流测试，以及绝缘电阻测量。试验标准应符合国家相关电力规范要求，合格后方可投入运行。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">热缩电缆头老化后有哪些表现？</div>
+                <div class="faq-answer">
+                    老化后的热缩电缆头通常会出现表面硬化、龟裂、变色或失去弹性。如果是户外端，可能发现雨裙破损或密封胶干裂，此时应及时更换。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>本站专注于提供电力工程、电气设备维护及施工工艺的专业技术资料与指导，致力于提升电力行业的施工安全与效率。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">电缆型号对照表</a></li>
+                        <li><a href="#">绝缘电阻测试标准</a></li>
+                        <li><a href="#">电缆故障查找方法</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">技术咨询</a></li>
+                        <li><a href="#">施工规范下载</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 电力工程技术指南. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
