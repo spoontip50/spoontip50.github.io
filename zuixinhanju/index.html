@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="最新韩剧电影网 - 提供最新韩国电视剧、电影高清资源、在线观看及详细剧情介绍。收录热门韩剧、经典韩影、韩漫改编作品，更新迅速，画质清晰。">
+    <meta name="keywords" content="最新韩剧电影,韩剧,韩影,韩国电视剧,韩国电影,在线观看">
+    <title>最新韩剧电影-韩国影视高清在线观看平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914; /* Netflix-like Red */
+            --secondary-color: #221f1f;
+            --accent-color: #46d369; /* Match status green */
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-sub: #b3b3b3;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-unit);
+            padding-top: var(--spacing-unit);
+            border-bottom: 1px solid #333;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 1.5rem;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .view-all:hover {
+            color: var(--text-main);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, var(--bg-color) 0%, transparent 50%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding-bottom: 40px;
+        }
+
+        .hero-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 15px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #f40612;
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            margin-left: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        /* Movie Grid */
+        .grid-section {
+            padding-bottom: 60px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 5;
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            background-color: #333;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .match-score {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Featured Section (Horizontal Scroll) */
+        .featured-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: #555 transparent;
+        }
+
+        .featured-row::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .featured-row::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        .featured-card {
+            min-width: 280px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-poster {
+            height: 160px;
+            position: relative;
+        }
+
+        .featured-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 15px;
+        }
+
+        .featured-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .featured-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Categories */
+        .category-pills {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            padding: 6px 16px;
+            background-color: #333;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            transition: background 0.2s;
+        }
+
+        .pill:hover, .pill.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            padding: 40px 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                display: none; /* Simplify for mobile demo */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">韩流<span>影视</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">韩剧</a></li>
+                <li><a href="#">韩影</a></li>
+                <li><a href="#">综艺</a></li>
+                <li><a href="#">更新列表</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('https://picsum.photos/seed/koreanhero/1600/900');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">本周推荐</span>
+            <h1>黑暗荣耀：第二季</h1>
+            <div class="hero-meta">
+                <span>2024</span>
+                <span>韩国</span>
+                <span>16集</span>
+                <span>剧情 / 悬疑</span>
+                <span>9.8分</span>
+            </div>
+            <p class="hero-desc">文东恩历经多年精心策划，向加害者们展开了一场残酷而精密的复仇。随着真相的层层剥开，曾经的阴影再次笼罩首尔，正义与罪恶的界限变得模糊。</p>
+            <div>
+                <button class="btn btn-primary">立即播放</button>
+                <button class="btn btn-secondary">加入片单</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Categories -->
+        <div class="category-pills">
+            <a href="#" class="pill active">全部</a>
+            <a href="#" class="pill">韩剧</a>
+            <a href="#" class="pill">爱情</a>
+            <a href="#" class="pill">悬疑</a>
+            <a href="#" class="pill">犯罪</a>
+            <a href="#" class="pill">历史</a>
+            <a href="#" class="pill">喜剧</a>
+        </div>
+
+        <!-- Trending Section -->
+        <section class="grid-section">
+            <div class="section-header">
+                <h2 class="section-title">热播韩剧</h2>
+                <a href="#" class="view-all">查看全部 ></a>
+            </div>
+            <div class="movie-grid">
+                <!-- Card 1 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kdrama1/300/450" alt="鱿鱼游戏2海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">鱿鱼游戏：鱿鱼游戏2</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="match-score">98% 匹配</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kdrama2/300/450" alt="眼泪女王海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">眼泪女王</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="match-score">95% 匹配</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kdrama3/300/450" alt="BBA海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">BBA（BBA）</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="match-score">92% 匹配</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 4 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kdrama4/300/450" alt="机智医生生活4海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">机智医生生活4</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="match-score">99% 匹配</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 5 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kdrama5/300/450" alt="背着善宰跑海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">背着善宰跑</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="match-score">90% 匹配</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 6 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kdrama6/300/450" alt="眼泪女王海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">眼泪女王</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="match-score">95% 匹配</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- New Movies Section -->
+        <section class="grid-section">
+            <div class="section-header">
+                <h2 class="section-title">最新韩影</h2>
+                <a href="#" class="view-all">查看全部 ></a>
+            </div>
+            <div class="movie-grid">
+                <!-- Movie Card 1 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kmovie1/300/450" alt="首尔之春海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">首尔之春</h3>
+                        <div class="card-meta">
+                            <span>2023</span>
+                            <span>2小时14分</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Movie Card 2 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kmovie2/300/450" alt="破墓海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">破墓</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span>2小时05分</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Movie Card 3 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kmovie3/300/450" alt="黑钱战争海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">黑钱战争</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span>2小时05分</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Movie Card 4 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kmovie4/300/450" alt="掮客海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">掮客</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span>2小时00分</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Movie Card 5 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kmovie5/300/450" alt="外星+人海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">外星+人</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span>2小时05分</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Movie Card 6 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/kmovie6/300/450" alt="哈尔滨海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">哈尔滨</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span>2小时10分</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Top Ranking List (Sidebar Style) -->
+        <section class="grid-section" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+            <div>
+                <div class="section-header">
+                    <h2 class="section-title">正在更新</h2>
+                    <a href="#" class="view-all">更多 ></a>
+                </div>
+                <div class="featured-row">
+                    <div class="featured-card">
+                        <div class="featured-poster">
+                            <img src="https://picsum.photos/seed/now1/400/300" alt="更新封面">
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">黑道律师文森佐 S2</h3>
+                            <p class="featured-desc">文森佐回到韩国，不仅要面对新的敌人，还要处理家族内部的纷争。</p>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-poster">
+                            <img src="https://picsum.photos/seed/now2/400/300" alt="更新封面">
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">泪之女王 Ep.12</h3>
+                            <p class="featured-desc">金淑贤和白贤宇的感情将面临最终的考验，真相即将大白。</p>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-poster">
+                            <img src="https://picsum.photos/seed/now3/400/300" alt="更新封面">
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">眼泪女王 Ep.12</h3>
+                            <p class="featured-desc">财阀千金与普通牙医的罗曼史，第12集大结局。</p>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-poster">
+                            <img src="https://picsum.photos/seed/now4/400/300" alt="更新封面">
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">背着善宰跑 Ep.8</h3>
+                            <p class="featured-desc">穿越时空的恋爱喜剧，善宰和宰率的感情升温。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <aside>
+                <div class="section-header">
+                    <h2 class="section-title">高分榜单</h2>
+                </div>
+                <div style="background: var(--card-bg); padding: 20px; border-radius: 8px;">
+                    <ul style="counter-reset: ranking;">
+                        <li style="position: relative; padding-left: 40px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                            <span style="position: absolute; left: 0; top: 2px; font-size: 1.2rem; font-weight: 800; color: var(--primary-color);">1</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 4px;">请回答1988</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-sub);">9.8分</span>
+                            </div>
+                        </li>
+                        <li style="position: relative; padding-left: 40px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                            <span style="position: absolute; left: 0; top: 2px; font-size: 1.2rem; font-weight: 800; color: var(--primary-color);">2</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 4px;">我的大叔</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-sub);">9.7分</span>
+                            </div>
+                        </li>
+                        <li style="position: relative; padding-left: 40px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                            <span style="position: absolute; left: 0; top: 2px; font-size: 1.2rem; font-weight: 800; color: var(--primary-color);">3</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 4px;">天空之城</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-sub);">9.6分</span>
+                            </div>
+                        </li>
+                        <li style="position: relative; padding-left: 40px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                            <span style="position: absolute; left: 0; top: 2px; font-size: 1.2rem; font-weight: 800; color: var(--primary-color);">4</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 4px;">秘密森林</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-sub);">9.6分</span>
+                            </div>
+                        </li>
+                        <li style="position: relative; padding-left: 40px;">
+                            <span style="position: absolute; left: 0; top: 2px; font-size: 1.2rem; font-weight: 800; color: var(--primary-color);">5</span>
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 4px;">信号</h4>
+                                <span style="font-size: 0.8rem; color: var(--text-sub);">9.5分</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col" style="flex: 2; min-width: 300px;">
+                <a href="#" class="logo" style="margin-bottom: 20px; display: inline-block;">韩流<span>影视</span></a>
+                <p style="max-width: 400px; color: #888;">
+                    韩流影视网致力于为用户提供最优质的韩国影视内容资源。我们收集整理了最新的韩剧、韩影、综艺以及经典老剧，支持高清在线观看，是您追剧观影的首选平台。
+                </p>
+            </div>
+            <div class="footer-col" style="flex: 1; min-width: 150px;">
+                <h4>剧集分类</h4>
+                <ul>
+                    <li><a href="#">爱情剧</a></li>
+                    <li><a href="#">悬疑剧</a></li>
+                    <li><a href="#">犯罪剧</a></li>
+                    <li><a href="#">历史剧</a></li>
+                    <li><a href="#">家庭剧</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="flex: 1; min-width: 150px;">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 韩流影视网. All Rights Reserved. 本站内容仅供学习交流，请勿用于商业用途。
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
