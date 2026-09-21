@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="奥金锭是魔兽世界中的核心制造材料，本文提供奥金锭获取方法、炼金术合成配方、附魔用途及市场价值分析，助您高效囤积资源。">
+    <meta name="keywords" content="奥金锭, 魔兽世界, 炼金术, 制造材料, 附魔材料, 采矿">
+    <title>奥金锭-魔兽世界核心制造材料获取与合成指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-gold: #f5c233;
+            --primary-dark: #8a6d3b;
+            --bg-dark: #1a1a1a;
+            --bg-card: #2c2c2c;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-blue: #0078d7;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid #444;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(245, 194, 51, 0.1);
+            color: var(--primary-gold);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(245, 194, 51, 0.3);
+        }
+
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* 主要内容区 */
+        .main-column {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        section {
+            background-color: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            border: 1px solid #444;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-gold);
+            border-radius: 2px;
+        }
+
+        /* 材料合成表 */
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .recipe-table th, .recipe-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #444;
+        }
+
+        .recipe-table th {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        .recipe-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cost-highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        /* 附魔用途 */
+        .enchant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .enchant-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #555;
+            transition: transform 0.2s;
+        }
+
+        .enchant-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-gold);
+        }
+
+        .enchant-name {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .enchant-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* 侧边栏 */
+        .sidebar-column {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-card {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #444;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-list span.label {
+            color: var(--text-muted);
+        }
+
+        .info-list span.value {
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        /* 提示框 */
+        .alert-box {
+            background-color: rgba(255, 165, 0, 0.1);
+            border-left: 4px solid orange;
+            padding: 12px 16px;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: #ffcc80;
+        }
+
+        /* 常见问题 */
+        .faq-item {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 16px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #111;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #444;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none; /* 简化移动端展示 */
+            }
+
+            .recipe-table {
+                font-size: 0.85rem;
+            }
+            
+            .recipe-table th, .recipe-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line></svg>
+                <span>WoW 材料百科</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">材料合成</a>
+                <a href="#">附魔配方</a>
+                <a href="#">市场行情</a>
+                <a href="#">新手指南</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>奥金锭</h1>
+            <p>魔兽世界中最为核心的稀有制造材料，用于制作顶级装备、武器附魔及炼金转化。掌握其获取与合成技巧是经济专家的必修课。</p>
+            <div class="hero-tags">
+                <span class="tag">稀有材料</span>
+                <span class="tag">采矿掉落</span>
+                <span class="tag">炼金转化</span>
+                <span class="tag">附魔材料</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-grid">
+            <!-- 左侧主要内容 -->
+            <div class="main-column">
+                
+                <!-- 获取来源 -->
+                <article>
+                    <h2 class="section-title">主要获取来源</h2>
+                    <p style="margin-bottom: 16px; color: var(--text-muted);">
+                        奥金锭通常通过采矿 profession 获得，也可以通过炼金术将 <strong>奥术之尘</strong> 和 <strong>梦境之尘</strong> 转化为奥金锭。其掉落率极低，是衡量玩家采矿等级的重要标志。
+                    </p>
+                    <ul class="info-list">
+                        <li>
+                            <span class="label">主要来源</span>
+                            <span class="value">稀有矿脉（奥金矿石）</span>
+                        </li>
+                        <li>
+                            <span class="label">辅助来源</span>
+                            <span class="value">炼金转化（奥术之尘 + 梦境之尘）</span>
+                        </li>
+                        <li>
+                            <span class="label">掉落区域</span>
+                            <span class="value">希利苏斯、安其拉、东瘟疫之地、黑石山</span>
+                        </li>
+                        <li>
+                            <span class="label">获取难度</span>
+                            <span class="value">高（需要采矿等级 300+）</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 合成配方 -->
+                <article>
+                    <h2 class="section-title">炼金转化配方</h2>
+                    <p style="margin-bottom: 16px; color: var(--text-muted);">
+                        对于没有掌握采矿技能的玩家，炼金转化是获取奥金锭的有效途径。请注意，转化过程会消耗大量基础材料。
+                    </p>
+                    <table class="recipe-table">
+                        <thead>
+                            <tr>
+                                <th>配方名称</th>
+                                <th>消耗材料</th>
+                                <th>产出结果</th>
+                                <th>所需炼金等级</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>转化：奥金锭</td>
+                                <td>20 奥术之尘 + 20 梦境之尘</td>
+                                <td>1 奥金锭</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>转化：奥金锭</td>
+                                <td>4 奥术之尘 + 4 梦境之尘</td>
+                                <td>1 奥金锭</td>
+                                <td>375</td>
+                            </tr>
+                            <tr>
+                                <td>转化：奥金锭</td>
+                                <td>1 梦境之尘 + 1 奥术之尘</td>
+                                <td>1 奥金锭</td>
+                                <td>525</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert-box">
+                        <strong>提示：</strong> 随着炼金等级的提升，转化所需的基础材料数量会大幅减少，效率更高。
+                    </div>
+                </article>
+
+                <!-- 附魔用途 -->
+                <article>
+                    <h2 class="section-title">附魔材料用途</h2>
+                    <p style="margin-bottom: 16px; color: var(--text-muted);">
+                        奥金锭是制作顶级附魔材料 <strong>大地的孩子</strong> 的核心原料，该材料可用于制作强力的武器附魔。
+                    </p>
+                    <div class="enchant-grid">
+                        <div class="enchant-card">
+                            <div class="enchant-name">大地的孩子</div>
+                            <div class="enchant-desc">武器附魔材料。需消耗 1 奥金锭、1 火元素精华、1 水之精华、1 土之精华、1 风之精华。</div>
+                        </div>
+                        <div class="enchant-card">
+                            <div class="enchant-name">奥金钢</div>
+                            <div class="enchant-desc">锻造材料。需消耗 1 奥金锭 + 1 真银锭。</div>
+                        </div>
+                        <div class="enchant-card">
+                            <div class="enchant-name">灵纹布</div>
+                            <div class="enchant-desc">裁缝材料。需消耗 1 奥金锭 + 1 月布。</div>
+                        </div>
+                        <div class="enchant-card">
+                            <div class="enchant-name">奥金图纸</div>
+                            <div class="enchant-desc">稀有图纸。需消耗 1 奥金锭 + 1 魔纹布。</div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- 右侧侧边栏 -->
+            <aside class="sidebar-column">
+                
+                <div class="info-card">
+                    <h3 class="section-title" style="font-size: 1.1rem; border-bottom: 1px solid #444; padding-bottom: 8px;">市场价值参考</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span class="label">服务器均价</span>
+                            <span class="value">波动较大</span>
+                        </li>
+                        <li>
+                            <span class="label">近期趋势</span>
+                            <span class="value">稳定</span>
+                        </li>
+                        <li>
+                            <span class="label">推荐囤积</span>
+                            <span class="value">版本末期</span>
+                        </li>
+                    </ul>
+                    <div class="alert-box" style="font-size: 0.8rem; margin-top: 12px;">
+                        价格受服务器经济影响，建议关注拍卖行实时动态。
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="section-title" style="font-size: 1.1rem; border-bottom: 1px solid #444; padding-bottom: 8px;">常见问题 (FAQ)</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">奥金锭能直接交易吗？</div>
+                        <div class="faq-answer">可以，奥金锭属于普通物品，可以安全地在拍卖行交易。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">哪里最容易挖到？</div>
+                        <div class="faq-answer">希利苏斯的黑石山区域和安其拉废墟周边是主要矿点。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">奥金锭有什么用？</div>
+                        <div class="faq-answer">用于制作奥金钢（锻造）、附魔材料（大地的孩子）以及炼金转化。</div>
+                    </div>
+                </div>
+
+                <div class="info-card" style="background: linear-gradient(45deg, #2c2c2c, #3a3a3a);">
+                    <h3 class="section-title" style="font-size: 1.1rem; border-bottom: 1px solid #555; padding-bottom: 8px;">专业搭配建议</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">
+                        <strong>采矿 + 铁匠：</strong> 自给自足，制作奥金钢装备。<br><br>
+                        <strong>采矿 + 炼金：</strong> 采集多余矿石进行转化，赚取材料差价。<br><br>
+                        <strong>附魔：</strong> 收购奥金锭制作大地的孩子，出售成品附魔服务。
+                    </p>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 WoW 材料百科. 本站内容仅供游戏参考，非官方网站。</p>
+            <p style="margin-top: 8px; opacity: 0.6;">《魔兽世界》是 Blizzard Entertainment 的注册商标。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
