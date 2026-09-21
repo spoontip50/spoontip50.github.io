@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="西瓜 - 优质西瓜品种介绍、种植技术指南、营养功效解析及选购储存方法。为您提供从田间到餐桌的全方位西瓜知识服务。">
+    <meta name="keywords" content="西瓜,西瓜品种,西瓜种植,西瓜营养,西瓜选购">
+    <title>西瓜 - 优质品种介绍与种植养护指南</title>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --primary-dark: #e05454;
+            --secondary-color: #ff9f43;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --bg-body: #fdfbf7;
+            --bg-card: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fff0f0 0%, #ffeaa7 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            background-color: var(--primary-dark);
+        }
+
+        /* 内容区域 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 品种展示 */
+        .varieties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .card-img-placeholder::before {
+            content: '🍉';
+            font-size: 5rem;
+            opacity: 0.8;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-img-placeholder::before {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #fff0f0;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 种植指南 */
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-image {
+            background-color: #f0f0f0;
+            border-radius: var(--radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            position: relative;
+        }
+        
+        .guide-image::after {
+            content: '🌱';
+            font-size: 6rem;
+            position: absolute;
+        }
+
+        .guide-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .guide-steps {
+            margin-top: 30px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .step-num {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .step-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 营养与选购 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .info-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fafafa;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* 近似值 */
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand p {
+            color: #b2bec3;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #636e72;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .guide-image {
+                height: 300px;
+            }
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 15px;
+            }
+            nav ul {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-brand p {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <span>🍉</span> 西瓜
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#varieties" class="active">品种大全</a></li>
+                    <li><a href="#guide">种植指南</a></li>
+                    <li><a href="#nutrition">营养选购</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+                <div class="mobile-menu-btn">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>盛夏的甜蜜馈赠</h1>
+                <p>探索西瓜的多样品种，学习科学种植方法，了解如何挑选最甜美的果实，尽享清凉一夏。</p>
+                <a href="#varieties" class="cta-button">探索品种</a>
+            </div>
+        </section>
+
+        <!-- 品种展示 -->
+        <section id="varieties" class="container">
+            <div class="section-header">
+                <h2>热门西瓜品种</h2>
+                <p>不同品种的西瓜在口感、糖度和外观上各有特色，满足您的不同味蕾需求。</p>
+            </div>
+            <div class="varieties-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img-placeholder"></div>
+                    <div class="card-body">
+                        <span class="card-tag">口感脆甜</span>
+                        <h3 class="card-title">麒麟西瓜</h3>
+                        <p class="card-text">果肉鲜红，口感脆甜多汁，中心糖度可达12度以上，是夏季最受欢迎的品种之一。</p>
+                        <a href="#" class="card-link">查看详情 →</a>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img-placeholder"></div>
+                    <div class="card-body">
+                        <span class="card-tag">沙瓤口感</span>
+                        <h3 class="card-title">特小凤西瓜</h3>
+                        <p class="card-text">个头小巧，皮薄肉嫩，口感沙脆，甜度适中，非常适合家庭食用和儿童。</p>
+                        <a href="#" class="card-link">查看详情 →</a>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-img-placeholder"></div>
+                    <div class="card-body">
+                        <span class="card-tag">超高甜度</span>
+                        <h3 class="card-title">8424西瓜</h3>
+                        <p class="card-text">经典的黑美人系列，皮薄肉厚，汁水丰富，具有浓郁的瓜香，甜度极高。</p>
+                        <a href="#" class="card-link">查看详情 →</a>
+                    </div>
+                </article>
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-img-placeholder"></div>
+                    <div class="card-body">
+                        <span class="card-tag">无籽食用</span>
+                        <h3 class="card-title">无籽西瓜</h3>
+                        <p class="card-text">通过杂交育种技术培育，无籽或籽极少，食用方便，口感清甜，老少皆宜。</p>
+                        <a href="#" class="card-link">查看详情 →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 种植指南 -->
+        <section id="guide" style="background-color: #fff;">
+            <div class="container guide-container">
+                <div class="guide-image"></div>
+                <div class="guide-content">
+                    <h3>西瓜种植关键技巧</h3>
+                    <p>想要种出又大又甜的西瓜，选种和田间管理至关重要。以下是核心种植步骤：</p>
+                    
+                    <div class="guide-steps">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-text">
+                                <h4>适时播种与育苗</h4>
+                                <p>西瓜喜温，种子需在25℃以上才能发芽。建议先育苗再移栽，保证幼苗健壮。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-text">
+                                <h4>整地与定植</h4>
+                                <p>选择排水良好、土层深厚的地块，起垄种植。定植时注意密度，保证通风透光。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-text">
+                                <h4>水肥管理与整枝</h4>
+                                <p>幼苗期控水促根，结果期保证水分供应。采用双蔓或三蔓整枝，保留2-3个瓜。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">4</div>
+                            <div class="step-text">
+                                <h4>病虫害防治</h4>
+                                <p>重点防治蚜虫、炭疽病和白粉病，及时摘除病叶，保持田间卫生。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 营养与选购 -->
+        <section id="nutrition" class="container">
+            <div class="section-header">
+                <h2>营养功效与选购技巧</h2>
+                <p>西瓜不仅解渴，还富含多种维生素和矿物质，掌握科学方法轻松挑选好瓜。</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-box">
+                    <div class="info-icon">💧</div>
+                    <h4>补水解渴</h4>
+                    <p>西瓜水分含量高达92%以上，能有效补充人体流失的水分，缓解中暑症状。</p>
+                </div>
+                <div class="info-box">
+                    <div class="info-icon">🧠</div>
+                    <h4>美容养颜</h4>
+                    <p>富含番茄红素和维生素C，具有抗氧化作用，有助于清除自由基，延缓衰老。</p>
+                </div>
+                <div class="info-box">
+                    <div class="info-icon">🛡️</div>
+                    <h4>利尿排毒</h4>
+                    <p>含有瓜氨酸，有助于促进尿素生成，帮助肾脏排出毒素，减轻肾脏负担。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于西瓜的种植、保存和食用，您可能还有这些疑问。</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">西瓜放久了变味还能吃吗？</div>
+                        <div class="faq-answer">
+                            <p>如果西瓜出现异味、发酸、酒味或者果肉变软发霉，说明已经滋生大量细菌或发生变质，绝对不能食用，以免引起肠胃不适。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">西瓜皮有什么用处？</div>
+                        <div class="faq-answer">
+                            <p>西瓜皮可以食用，凉拌、炒肉或腌制都非常美味。此外，西瓜皮还含有瓜氨酸，常用于制作护肤品，具有舒缓肌肤的作用。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何判断西瓜熟没熟？</div>
+                        <div class="faq-answer">
+                            <p>可以通过观察西瓜蒂的颜色（卷曲枯黄通常较熟）、按压声音（发出“嘭嘭”声为熟瓜）、以及瓜脐（肚脐眼）的大小来判断。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>🍉 西瓜百科</h3>
+                    <p>专注于西瓜种植技术与品种介绍，致力于分享健康、美味的西瓜知识。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>品种推荐</h4>
+                    <ul>
+                        <li><a href="#">麒麟瓜</a></li>
+                        <li><a href="#">特小凤</a></li>
+                        <li><a href="#">黑美人</a></li>
+                        <li><a href="#">无籽西瓜</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>种植指南</h4>
+                    <ul>
+                        <li><a href="#">育苗技术</a></li>
+                        <li><a href="#">病虫害防治</a></li>
+                        <li><a href="#">采收时机</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 西瓜百科网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 移动端菜单简单切换（演示用）
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+        
+        menuBtn.addEventListener('click', () => {
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+                navUl.style.position = 'absolute';
+                navUl.style.top = '70px';
+                navUl.style.left = '0';
+                navUl.style.width = '100%';
+                navUl.style.background = 'white';
+                navUl.style.padding = '20px';
+                navUl.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
