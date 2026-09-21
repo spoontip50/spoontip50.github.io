@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热血传奇客户端 - 经典复古版本下载与怀旧攻略指南</title>
+    <meta name="description" content="提供热血传奇客户端下载，包含1.76经典版、1.80金币版、1.85合击版等怀旧版本。详细介绍游戏客户端安装步骤、版本差异对比、服务器选择建议及新手装备攻略。">
+    <meta name="keywords" content="热血传奇客户端,热血传奇下载,传奇1.76客户端,传奇1.80客户端,热血传奇私服,传奇怀旧服">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-gold: #f0c420;
+            --primary-dark: #1a1a1a;
+            --secondary-bg: #2b2b2b;
+            --text-light: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --accent-red: #d32f2f;
+            --border-color: #444;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid var(--primary-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+            font-size: 14px;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-light);
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-dark);
+            background-color: var(--primary-gold);
+        }
+
+        .btn-download-top {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-download-top:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--primary-dark)), 
+                        url('https://picsum.photos/seed/legendhero/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            background: linear-gradient(45deg, #ffd700, #ffec8b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 196, 32, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(240, 196, 32, 0.1);
+        }
+
+        /* 版本选择区 */
+        .versions-section {
+            padding: 60px 0;
+            background-color: var(--primary-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-gold);
+            margin: 10px auto 0;
+        }
+
+        .version-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .version-card {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .version-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .card-img {
+            height: 160px;
+            background-color: #000;
+            position: relative;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 2px 8px;
+            font-size: 12px;
+            border-radius: 2px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card-content p {
+            color: var(--text-dim);
+            font-size: 14px;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 10px 0;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-block:hover {
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+        }
+
+        /* 安装指南 */
+        .guide-section {
+            padding: 60px 0;
+            background-color: #252525;
+        }
+
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-steps {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .guide-steps h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-gold);
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-gold);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .step-desc {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .warning-box {
+            margin-top: 30px;
+            background-color: rgba(211, 47, 47, 0.1);
+            border-left: 4px solid var(--accent-red);
+            padding: 15px;
+            font-size: 14px;
+            color: #ff8a80;
+        }
+
+        /* 热门榜单 */
+        .ranking-section {
+            padding: 60px 0;
+            background-color: var(--primary-dark);
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .ranking-table th, .ranking-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .ranking-table th {
+            background-color: #222;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .ranking-table tr:hover {
+            background-color: #333;
+        }
+
+        .rank-num {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #444;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .rank-1 .rank-num { background-color: #ffd700; color: #000; }
+        .rank-2 .rank-num { background-color: #c0c0c0; color: #000; }
+        .rank-3 .rank-num { background-color: #cd7f32; color: #000; }
+
+        .server-name {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .server-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-online { background-color: #4caf50; }
+        .status-offline { background-color: #9e9e9e; }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+            background-color: #252525;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #333;
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-gold);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-dim);
+            font-size: 15px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 4px solid var(--primary-gold);
+            font-size: 14px;
+            color: #777;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { margin: 15px 0; gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .guide-container { flex-direction: column; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                传奇回忆 <span>LEGEND</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#versions">版本下载</a></li>
+                    <li><a href="#guide">安装指南</a></li>
+                    <li><a href="#ranking">热门榜单</a></li>
+                    <li><a href="#faq">玩家问答</a></li>
+                </ul>
+            </nav>
+            <a href="#versions" class="btn-download-top">
+                <span>⚡</span> 立即下载
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>重温传奇岁月，经典热血再燃</h1>
+                <p>提供最稳定的 1.76、1.80、1.85 热血传奇客户端下载。无需繁琐配置，一键启动，体验原汁原味的沙巴克攻城与兄弟情义。</p>
+                <div class="hero-actions">
+                    <a href="#versions" class="btn btn-primary">下载客户端</a>
+                    <a href="#guide" class="btn btn-outline">查看安装教程</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 版本选择 -->
+        <section id="versions" class="versions-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>经典版本下载</h2>
+                    <p style="color: #888; margin-top: 10px;">选择您最怀念的版本，找回当年的热血激情</p>
+                </div>
+                <div class="version-grid">
+                    <!-- 版本卡片 1 -->
+                    <article class="version-card">
+                        <div class="card-img">
+                            <span class="card-tag">最经典</span>
+                            <img src="https://picsum.photos/seed/legend76/400/250" alt="热血传奇1.76客户端">
+                        </div>
+                        <div class="card-content">
+                            <h3>热血传奇 1.76 官方原版</h3>
+                            <p>还原了游戏最初的平衡性与数值设定，战士烈火、法师冰咆哮、道士召唤神兽，这是所有传奇玩家心中的白月光。</p>
+                            <div class="card-meta">
+                                <span>大小: 1.2GB</span>
+                                <span>更新: 2023-10</span>
+                            </div>
+                            <a href="#" class="btn-block">立即下载</a>
+                        </div>
+                    </article>
+
+                    <!-- 版本卡片 2 -->
+                    <article class="version-card">
+                        <div class="card-img">
+                            <span class="card-tag">金币版</span>
+                            <img src="https://picsum.photos/seed/legend80/400/250" alt="热血传奇1.80金币版客户端">
+                        </div>
+                        <div class="card-content">
+                            <h3>热血传奇 1.80 金币版</h3>
+                            <p>增加了金币掉落机制，怪物等级提升，装备获取更具挑战性。适合喜欢高难度挑战和爆装快感的老玩家。</p>
+                            <div class="card-meta">
+                                <span>大小: 1.5GB</span>
+                                <span>更新: 2023-10</span>
+                            </div>
+                            <a href="#" class="btn-block">立即下载</a>
+                        </div>
+                    </article>
+
+                    <!-- 版本卡片 3 -->
+                    <article class="version-card">
+                        <div class="card-img">
+                            <span class="card-tag">合击版</span>
+                            <img src="https://picsum.photos/seed/legend85/400/250" alt="热血传奇1.85合击版客户端">
+                        </div>
+                        <div class="card-content">
+                            <h3>热血传奇 1.85 合击版</h3>
+                            <p>引入职业合击技能，战士+法师、道士+战士等组合，技能特效华丽，PK体验更加爽快，社交互动性更强。</p>
+                            <div class="card-meta">
+                                <span>大小: 1.8GB</span>
+                                <span>更新: 2023-11</span>
+                            </div>
+                            <a href="#" class="btn-block">立即下载</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 安装指南 -->
+        <section id="guide" class="guide-section">
+            <div class="container guide-container">
+                <div class="guide-text">
+                    <h3>关于客户端安装</h3>
+                    <p style="color: #aaa; margin-bottom: 20px;">很多新玩家在下载热血传奇客户端后不知道如何启动。本站提供的客户端已内置必要的数据包和启动器，请按照以下步骤操作：</p>
+                    <ul style="color: #ccc; margin-left: 20px; list-style-type: disc;">
+                        <li>下载完成后，请勿随意更改压缩包内的文件路径。</li>
+                        <li>双击解压后的 "传奇启动器.exe" 或 "GameClient.exe"。</li>
+                        <li>如果提示缺少 "msvcp140.dll" 或 "vcruntime140.dll"，请下载 Visual C++ 运行库并安装。</li>
+                        <li>启动后选择服务器列表，输入账号密码即可进入游戏。</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>注意：</strong> 请确保您的电脑配置满足最低运行要求，建议安装 64 位系统以确保流畅度。
+                    </div>
+                </div>
+                <div class="guide-steps">
+                    <h3>详细安装步骤</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-title">步骤 1：下载与解压</div>
+                            <div class="step-desc">点击上方对应版本的下载按钮，将压缩包保存至桌面，右键选择“解压到当前文件夹”。</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-title">步骤 2：安装运行库</div>
+                            <div class="step-desc">打开解压后的文件夹，运行 "VC运行库安装.exe" 或 "安装运行库.bat"，等待安装完成。</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-title">步骤 3：启动游戏</div>
+                            <div class="step-desc">双击“传奇启动器”，等待资源校验完毕，点击“进入游戏”。</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-title">步骤 4：创建角色</div>
+                            <div class="step-desc">在登录界面选择服务器，点击“创建角色”，输入您心仪的昵称并选择职业。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门榜单 -->
+        <section id="ranking" class="ranking-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门服务器推荐</h2>
+                    <p style="color: #888; margin-top: 10px;">当前在线人数最多、口碑最好的传奇服务器</p>
+                </div>
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">排名</th>
+                            <th>服务器名称</th>
+                            <th>类型</th>
+                            <th>当前人数</th>
+                            <th>状态</th>
+                            <th style="width: 120px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="rank-1">
+                            <td><span class="rank-num">1</span></td>
+                            <td><span class="server-name">【复古】1.76 沙巴克传奇</span></td>
+                            <td>经典怀旧</td>
+                            <td>3,245</td>
+                            <td><span class="server-status status-online"></span>在线</td>
+                            <td><a href="#" style="color: var(--primary-gold);">进入游戏</a></td>
+                        </tr>
+                        <tr class="rank-2">
+                            <td><span class="rank-num">2</span></td>
+                            <td><span class="server-name">【合击】1.85 龙腾天下</span></td>
+                            <td>合击PK</td>
+                            <td>2,890</td>
+                            <td><span class="server-status status-online"></span>在线</td>
+                            <td><a href="#" style="color: var(--primary-gold);">进入游戏</a></td>
+                        </tr>
+                        <tr class="rank-3">
+                            <td><span class="rank-num">3</span></td>
+                            <td><span class="server-name">【金币】1.80 无忧传奇</span></td>
+                            <td>金币掉落</td>
+                            <td>1,560</td>
+                            <td><span class="server-status status-online"></span>在线</td>
+                            <td><a href="#" style="color: var(--primary-gold);">进入游戏</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">4</span></td>
+                            <td><span class="server-name">【私服】1.76 混沌版本</span></td>
+                            <td>变态福利</td>
+                            <td>890</td>
+                            <td><span class="server-status status-online"></span>在线</td>
+                            <td><a href="#" style="color: var(--primary-gold);">进入游戏</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank-num">5</span></td>
+                            <td><span class="server-name">【神龙】1.80 热血盟战</span></td>
+                            <td>盟战争霸</td>
+                            <td>450</td>
+                            <td><span class="server-status status-online"></span>在线</td>
+                            <td><a href="#" style="color: var(--primary-gold);">进入游戏</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        下载后的客户端无法启动怎么办？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>请首先检查是否安装了 Visual C++ 2015-2022 运行库。如果没有安装，请下载并安装该组件。如果依然无法启动，请尝试以“管理员身份运行”启动器。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        客户端下载速度慢或中断？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>部分服务器资源可能较大，建议使用下载工具（如迅雷、IDM）进行多线程下载，或者等待非高峰时段下载。如果下载中断，请重新点击下载按钮继续。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        1.76和1.85版本有什么区别？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>1.76版本是传奇的巅峰时期，数值最平衡，适合喜欢怀旧和单挑的玩家；1.85版本引入了合击技能，职业搭配更多样化，PK体验更丰富，适合喜欢组队和技能特效的玩家。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        是否支持手机端下载？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>本站提供的是PC端（Windows）客户端。目前热血传奇尚无完全兼容的手机端官方版本，请勿下载非官方手机模拟器，以免账号被盗或电脑中毒。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 13px; line-height: 1.8;">
+                        传奇回忆致力于为玩家提供最纯净、最稳定的经典游戏客户端资源。我们尊重版权，所有资源仅供学习与交流使用。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>版本导航</h4>
+                    <ul>
+                        <li><a href="#">1.76 经典版</a></li>
+                        <li><a href="#">1.80 金币版</a></li>
+                        <li><a href="#">1.85 合击版</a></li>
+                        <li><a href="#">1.95 热血版</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">安装教程</a></li>
+                        <li><a href="#">账号注册</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">传奇私服论坛</a></li>
+                        <li><a href="#">游戏攻略站</a></li>
+                        <li><a href="#">经典游戏合集</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 传奇回忆网 版权所有 | 本站所有资源仅供个人学习研究使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // 关闭所有
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // 如果刚才没打开，则打开当前
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+
+        // 导航滚动高亮
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
